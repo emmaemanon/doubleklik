@@ -8,8 +8,21 @@
 #ifndef FSM_H
 #define	FSM_H
 
-#define TIME_PRESS_MS	5
-#define TIME_OFF_MS		10
+
+#define DDRLED_LAMP	DDRD
+#define PRTLED_LAMP	PORTD
+#define PN_LED_LAMP	PD3
+
+#define DDRBUTTON	DDRD
+#define PRTBUTTON	PORTD
+#define PINBUTTON	PIND
+#define PN_BUTTON	PD2
+
+#define TIME_PRESS_MS		1000
+#define TIME_OFF_MS			5000
+#define TIME_DEBOUNCE_US	1000
+
+#define UART_BAUD_RATE 9600
 
 #define START 			0
 #define STAGE_L0		1
@@ -19,7 +32,7 @@
 #define STAGE_L2		5
 #define STAGE_PRE_OFF	6
 
-void fsm(int butnum, int *time_press, int *time_off, int *state, int *lamp_stat);
+void fsm(uint8_t *butnum, uint16_t *time_press, uint16_t *time_off, uint8_t *state, uint8_t *lamp_stat);
 
 #endif	/* FSM_H */
 
