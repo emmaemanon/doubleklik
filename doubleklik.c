@@ -64,7 +64,7 @@ int main(void) {
 		sprintf(serial_buffer, "butnum %d | time_press %d | time off %2d | lamp %d state %d", butnum, (unsigned)time_press, (unsigned)time_off, lamp_stat, sys_state);
 		uart_puts(serial_buffer);
 		uart_puts("\r\n");
-		_delay_ms(20); /* wait */
+		_delay_ms(1); /* wait */
 	} /* End event loop */
 	
 	return (0); /* This line is never reached */
